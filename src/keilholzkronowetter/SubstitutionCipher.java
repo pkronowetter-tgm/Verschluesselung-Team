@@ -17,3 +17,4 @@ public class SubstitutionCipher extends MonoAlphabeticCipher {
 	}
 
 }
+ 

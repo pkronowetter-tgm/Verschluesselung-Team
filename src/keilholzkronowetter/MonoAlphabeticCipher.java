@@ -114,7 +114,7 @@ public class MonoAlphabeticCipher implements Cipher{
 			//wenn nicht dann wird diese unbekannte Zeichen einfach dem entschlüsselten Text hinzugefügt
 			}else{
 				
-				etext+=""+textbuchstabe[i];
+				etext+=""+textbuchstabe[i]; 
 			}
 		}	
 
