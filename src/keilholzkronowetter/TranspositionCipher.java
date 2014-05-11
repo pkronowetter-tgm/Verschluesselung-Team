@@ -42,8 +42,29 @@ public class TranspositionCipher implements Cipher {
 
 	@Override
 	public String decrypt(String text) {
+		char [] vText= text.toCharArray();
+		int length = (int) StrictMath.ceil((double)text.length()/level);
 		
-		return null;
+		char [][] eArray = new char [level][length];
+		
+		int textIndex = 0;
+
+		for (int i = 0; i <eArray.length; i++) {
+			for (int j = 0; j <eArray[i].length; j++) {
+					eArray[i][j] = vText[textIndex];
+					textIndex++;
+			}
+		}
+		
+		String enc = "";
+		for(int i = 0; i<length; i++){
+			for(int j = 0; j<level; j++){
+				enc +=eArray[j][i];
+			}
+		}
+
+		return enc;
+		
 	}
 	public static void main(String[] args){// throws CipherException {
 		Cipher c = new TranspositionCipher(3);
