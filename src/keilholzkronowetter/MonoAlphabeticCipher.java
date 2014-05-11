@@ -14,7 +14,7 @@ public class MonoAlphabeticCipher implements Cipher{
 	}
 	
 	/*
-	 * Getter-Methode für das Geheimalphabet
+	 * Getter-Methode für das Geheimalphabet.
 	 * @return das Geheimalphabet
 	 * 
 	 */
