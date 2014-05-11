@@ -12,7 +12,7 @@ public class SubstitutionCipher extends MonoAlphabeticCipher {
 	
 
 	public void setSecretAlphabet(String secretAlphabe){
-		secretAlphabet=secretAlphabe;
+		secretAlphabet=secretAlphabe; 
 		
 	}
 
