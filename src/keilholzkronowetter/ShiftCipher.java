@@ -41,35 +41,24 @@ public class ShiftCipher extends MonoAlphabeticCipher{
 		
 		//überprüfen ob der Wert von shiftvalue "ungültig" ist wenn ja wird standartgemäß 1 als value verwendet
 		
-		if(shiftvalue > 30 || shiftvalue <0){
-			
+		if(shiftvalue <0||shiftvalue>=27){
 			shiftvalue = 1;
 			}
 		
 		//Alphabet, das verschoben werden soll
-		String alphabet = super.getSecretAlphabet(); 
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 		
 		//Geheimalphabet
 		String geheimAlphabet="";
 		
-		//alphabet wird durchgegangen
-		for(int i=0; i<alphabet.length(); i++){
-			
-			//Ist der Wert größer oder gleich wie die Länge des Alphabets 
-			if((shiftvalue+i) >= alphabet.length()){
-				
-				//Das neue "verschobene" Alphabet wird erstellt
-				geheimAlphabet += alphabet.charAt(shiftvalue+i-alphabet.length());
-				
-			}else{
-				
-				//Das neue "verschobene" Alphabet wird erstellt
-				geheimAlphabet += alphabet.charAt(shiftvalue+i);
-			}
+
+		for (int i = shiftvalue; i<alphabet.length();i++){
+			geheimAlphabet+=alphabet.charAt(i);
 		}
-		
-		//Das neue Geheimalalphabet in kleinbuchstaben casten
-		geheimAlphabet = geheimAlphabet.toLowerCase();
+		for(int i = 0;i<shiftvalue;i++){
+			geheimAlphabet+=alphabet.charAt(i);			
+		}
+		System.out.println(geheimAlphabet);
 		
 		//In der Superklasse das neue Geheimalphabet setzten
 		super.setSecretAlphabet(geheimAlphabet);
