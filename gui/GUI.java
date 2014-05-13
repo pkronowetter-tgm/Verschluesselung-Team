@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -67,9 +69,10 @@ public class GUI extends JFrame{
 
 	public GUI(){
 		
-		this.setSize(500,500);
+		this.setSize(500,350);
 		this.tabpanel = new JTabbedPane();
 		this.setContentPane(tabpanel);
+		
 		
 		this.tabT = new JPanel();
 		this.tabK = new JPanel();
@@ -77,13 +80,21 @@ public class GUI extends JFrame{
 		this.tabShift = new JPanel();
 		
 		this.textT1 = new JTextArea();
+		this.textT1.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textT2 = new JTextArea();
+		this.textT2.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textK1 = new JTextArea();
+		this.textK1.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textK2 = new JTextArea();
+		this.textK2.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textSub1 = new JTextArea();
+		this.textSub1.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textSub2 = new JTextArea();
+		this.textSub2.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textShift1 = new JTextArea();
+		this.textShift1.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.textShift2 = new JTextArea();
+		this.textShift2.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		this.t1 = new JButton("Verschlüsseln");
 		this.t2 = new JButton("Entschlüsseln");
@@ -118,10 +129,17 @@ public class GUI extends JFrame{
 		this.sub = new JTextField();
 		this.shift = new JTextField();
 		
-		this.tabT.setLayout(new BoxLayout(tabT,BoxLayout.Y_AXIS));
-		this.tabK.setLayout(new BoxLayout(tabK,BoxLayout.Y_AXIS));
-		this.tabSub.setLayout(new BoxLayout(tabSub,BoxLayout.Y_AXIS));
-		this.tabShift.setLayout(new BoxLayout(tabShift,BoxLayout.Y_AXIS));
+		GridLayout gb = new GridLayout(4,1);
+		GridBagConstraints gbc = new GridBagConstraints(); 
+		
+		this.tabT.setLayout(gb);
+		this.tabT.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
+		this.tabK.setLayout(gb);
+		this.tabK.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
+		this.tabSub.setLayout(gb);
+		this.tabSub.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
+		this.tabShift.setLayout(gb);
+		this.tabShift.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
 		
 		this.tabT.add(tl1);
 		this.tabT.add(textT1);
@@ -166,7 +184,7 @@ public class GUI extends JFrame{
 		this.tabpanel.add(tabK,"KeywordCipher");
 		this.tabpanel.add(tabSub,"SubstitutionCipher");
 		this.tabpanel.add(tabShift,"ShiftCipher");
-		
+	
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		t1.addActionListener(new ActionListener(){
