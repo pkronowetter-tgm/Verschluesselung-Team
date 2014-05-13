@@ -66,6 +66,7 @@ public class TranspositionCipher implements Cipher {
 		return enc;
 		
 	}
+	/*
 	public static void main(String[] args){// throws CipherException {
 		Cipher c = new TranspositionCipher(3);
 		String s = c.encrypt("Hallo das ist ein Test");
@@ -73,4 +74,5 @@ public class TranspositionCipher implements Cipher {
 		s = c.decrypt(s);
 		System.out.println(s);
 	}
+	*/
 }
