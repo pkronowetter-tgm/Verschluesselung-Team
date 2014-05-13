@@ -42,44 +42,23 @@ public class KeywordCipher extends MonoAlphabeticCipher{
 		}
 		
 
-		String alphabet = super.getSecretAlphabet(); 
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 		
 		String geheimalphabet = "";
 		
-		//speichern der Zahl der schon verwendeten Buchstaben in ein int Array 
-		int[] vw = new int[keyword.length()]; 
-		
-		//druchgehen des Keywords
-		for(int i = 0; i < keyword.length(); ++i){
-			
-			vw[i] = alphabet.indexOf(keyword.charAt(i));
-			
-			//Geheimalphabet wird erstellt
-			geheimalphabet += "" + keyword.charAt(i);
-			
-		}
-		
-		//durchgehen der Länge des Alpahbets
-		for(int i = 0; i < alphabet.length(); ++i){
-			
-			//Hilfsvariable um zu speichern um später zu sehen ob ein buchstabe schon verwendet wurde
-			boolean hilfverwendet = false;
-			
-			for (int j = 0; j < vw.length; ++j){
-				
-				//wenn der Buchstabe verwendet wurde boolean Variable auf true setzen
-				if(i == vw[j]){ 
-					hilfverwendet = true;
-				}
-			}
-			
-			if(!hilfverwendet){
-				
-				////Geheimalphabet wird erstellt
-				geheimalphabet += "" + alphabet.charAt(i); 
+		for(char c:keyword.toCharArray()){
+			if(!geheimalphabet.contains(""+c)){
+				geheimalphabet+= c;
 			}
 		}
 		
+		for(char c:alphabet.toCharArray()){
+			if(!geheimalphabet.contains(""+c)){
+				geheimalphabet+= c;
+			}
+		}
+		
+		System.out.println(""+geheimalphabet);
 		//neues Geheimalphabet in der Superklasse setzen
 		super.setSecretAlphabet(geheimalphabet); 
 	}
