@@ -47,10 +47,27 @@ public class GUI extends JFrame{
 	private JTextField k;
 	private JTextField sub;
 	private JTextField shift;
+	
+	private JLabel tl1;
+	private JLabel tl2;
+	private JLabel tl3;
+	
+	private JLabel kl1;
+	private JLabel kl2;
+	private JLabel kl3;
+	
+	private JLabel subl1;
+	private JLabel subl2;
+	private JLabel subl3;
+	
+	private JLabel shiftl1;
+	private JLabel shiftl2;
+	private JLabel shiftl3;
+	
 
 	public GUI(){
 		
-		this.setSize(1000,500);
+		this.setSize(500,500);
 		this.tabpanel = new JTabbedPane();
 		this.setContentPane(tabpanel);
 		
@@ -77,6 +94,25 @@ public class GUI extends JFrame{
 		this.shift1 = new JButton("Verschlüsseln");
 		this.shift2 = new JButton("Entschlüsseln");
 		
+		
+		
+		this.tl1 = new JLabel("Entschlüsselter Text: ");
+		this.tl2 = new JLabel("Level der Verschlüsselung: ");
+		this.tl3 = new JLabel("Verschlüsselter Text: ");
+		
+		this.kl1 = new JLabel("Entschlüsselter Text");
+		this.kl2 = new JLabel("Keyword: ");
+		this.kl3 = new JLabel("Verschlüsselter Text: ");
+		
+		this.subl1 = new JLabel("Entschlüsselter Text");
+		this.subl2 = new JLabel("Geheimalphabet: ");
+		this.subl3 = new JLabel("Verschlüsselter Text: ");
+		
+		this.shiftl1 = new JLabel("Entschlüsselter Text");
+		this.shiftl2 = new JLabel("Keyword: ");
+		this.shiftl3 = new JLabel("Verschlüsselter Text: ");
+		
+		
 		this.t = new JTextField();
 		this.k = new JTextField();
 		this.sub = new JTextField();
@@ -87,17 +123,32 @@ public class GUI extends JFrame{
 		this.tabSub.setLayout(new BoxLayout(tabSub,BoxLayout.Y_AXIS));
 		this.tabShift.setLayout(new BoxLayout(tabShift,BoxLayout.Y_AXIS));
 		
+		this.tabT.add(tl1);
 		this.tabT.add(textT1);
+		this.tabT.add(tl2);
 		this.tabT.add(t);
+		this.tabT.add(tl3);
 		this.tabT.add(textT2);
+		
+		this.tabK.add(kl1);
 		this.tabK.add(textK1);
+		this.tabK.add(kl2);
 		this.tabK.add(k);
+		this.tabK.add(kl3);
 		this.tabK.add(textK2);
+		
+		this.tabSub.add(subl1);
 		this.tabSub.add(textSub1);
+		this.tabSub.add(subl2);
 		this.tabSub.add(sub);
+		this.tabSub.add(subl3);
 		this.tabSub.add(textSub2);
+		
+		this.tabShift.add(shiftl1);
 		this.tabShift.add(textShift1);
+		this.tabShift.add(shiftl2);
 		this.tabShift.add(shift);
+		this.tabShift.add(shiftl3);
 		this.tabShift.add(textShift2);
 		
 		
