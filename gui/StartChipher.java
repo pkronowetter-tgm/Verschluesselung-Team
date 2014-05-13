@@ -1,5 +1,5 @@
 
-public class StartCipher {
+public class StartChipher {
 
 	/**
 	 * @param args
