@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import keilholzkronowetter.KeywordCipher;
 import keilholzkronowetter.ShiftCipher;
@@ -120,8 +121,24 @@ public class GUI extends JFrame{
 		this.subl3 = new JLabel("Verschlüsselter Text: ");
 		
 		this.shiftl1 = new JLabel("Entschlüsselter Text");
-		this.shiftl2 = new JLabel("Keyword: ");
+		this.shiftl2 = new JLabel("Wert der Verschiebung: ");
 		this.shiftl3 = new JLabel("Verschlüsselter Text: ");
+		
+		tl1.setHorizontalAlignment(SwingConstants.CENTER);
+		tl2.setHorizontalAlignment(SwingConstants.CENTER);
+		tl3.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		kl1.setHorizontalAlignment(SwingConstants.CENTER);
+		kl2.setHorizontalAlignment(SwingConstants.CENTER);
+		kl3.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		subl1.setHorizontalAlignment(SwingConstants.CENTER);
+		subl2.setHorizontalAlignment(SwingConstants.CENTER);
+		subl3.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		shiftl1.setHorizontalAlignment(SwingConstants.CENTER);
+		shiftl2.setHorizontalAlignment(SwingConstants.CENTER);
+		shiftl3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		
 		this.t = new JTextField();
@@ -192,6 +209,9 @@ public class GUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String text = textT1.getText();
+				if(t.getText().equals("")){
+					t.setText("1");
+				}
 				TranspositionCipher c = new TranspositionCipher(Integer.parseInt(t.getText()));
 				String erg = c.encrypt(text);
 				textT2.setText(erg);
@@ -203,6 +223,9 @@ public class GUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String text = textT2.getText();
+				if(t.getText().equals("")){
+					t.setText("1");
+				}
 				TranspositionCipher c = new TranspositionCipher(Integer.parseInt(t.getText()));
 				String erg = c.decrypt(text);
 				textT1.setText(erg);
@@ -258,6 +281,9 @@ public class GUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String text = textShift1.getText();
+				if(shift.getText().equals("")){
+					shift.setText("1");
+				}
 				ShiftCipher s = new ShiftCipher(Integer.parseInt(shift.getText()));
 				String erg = s.encrypt(text);
 				textShift2.setText(erg);
@@ -269,6 +295,9 @@ public class GUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String text = textShift2.getText();
+				if(shift.getText().equals("")){
+					shift.setText("1");
+				}
 				ShiftCipher s = new ShiftCipher(Integer.parseInt(shift.getText()));
 				String erg = s.decrypt(text);
 				textShift1.setText(erg);
