@@ -40,6 +40,9 @@ public class ShiftCipher extends MonoAlphabeticCipher{
 		
 		
 		//überprüfen ob der Wert von shiftvalue "ungültig" ist wenn ja wird standartgemäß 1 als value verwendet
+		if(""+shiftvalue == ""){
+			shiftvalue = 1;
+		}
 		
 		if(shiftvalue <0||shiftvalue>=27){
 			shiftvalue = 1;
@@ -58,7 +61,6 @@ public class ShiftCipher extends MonoAlphabeticCipher{
 		for(int i = 0;i<shiftvalue;i++){
 			geheimAlphabet+=alphabet.charAt(i);			
 		}
-		System.out.println(geheimAlphabet);
 		
 		//In der Superklasse das neue Geheimalphabet setzten
 		super.setSecretAlphabet(geheimAlphabet);
